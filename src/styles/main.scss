@@ -2,6 +2,7 @@
 @use 'hero';
 @use 'shows';
 @use 'plans';
+@use 'watch_anywhere';
 
 
 @font-face{
@@ -31,7 +32,7 @@ body {
     line-height: $fontSize + 10px;
     color: variaveis.$corTextoMain;
 }
-@mixin title($fontSize: 40px) {
+@mixin title($fontSize: 34px) {
     @include text($fontSize);
     color: variaveis.$corTextoSecun;
 }
@@ -53,7 +54,7 @@ body {
 }
 
 .title--big {
-    @include title(44px);
+    @include title(38px);
     
 }
 .title {
