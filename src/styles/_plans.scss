@@ -1,0 +1,46 @@
+@use 'variaveis';
+
+.plans {
+    padding: 3vw 0; /* Ajuste de espaçamento */
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px; /* Dá um respiro abaixo do título */
+    }
+    &__list {
+        display: flex;
+        justify-content: center; /* Centraliza os itens */
+        gap: 40px; /* Dá espaço entre os planos */
+        list-style: none;
+    
+        &__item {
+            margin: 30px;
+            text-align: center;
+            padding: 40px 20px;
+            width: 20%; /* Reduz a largura para caber três por linha */
+            max-width: 380px; /* Define um tamanho máximo para manter proporção */
+            
+            &:nth-child(2){
+                background-image: url(../images/fundo_combo_plus.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            strong {
+                display: block;
+                font-size: 1.2em;
+                margin-top: 10px;
+            }
+            img {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%; /* Para garantir que a imagem não ultrapasse os limites do item */
+            }
+        }
+    }
+
+}
+p {
+    text-align: center;
+}
+
