@@ -1,0 +1,36 @@
+.available-devices{
+    padding: 5.6vw;
+    li{
+        list-style-type:none;
+    }
+
+    h2{
+        text-align: center;
+        margin-bottom: 26px;
+    }
+    
+    &__list{
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+        
+
+        &__item{
+            text-align: center;
+
+            h4{
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+
+            li{
+                list-style-type:none;
+                color: silver;
+            }
+
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+}
