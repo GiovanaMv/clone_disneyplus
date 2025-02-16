@@ -5,6 +5,7 @@
 @use 'available-devices';
 @use 'faq';
 @use 'footer';
+@use 'header';
 
 
 @font-face{
@@ -22,6 +23,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir, sans-serif;
+    list-style-type: none;
 }
 
 body {
@@ -67,17 +69,48 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     width: 100%;
-    height: 42px;
+    height: 60px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     color: variaveis.$corTextoSecun;
-    background-color: #6421ff;
-    margin: 2px;
-    margin-top: 16px;
-    font-weight: bold;
-    border: none; border-radius: 3px;
+    background-color: variaveis.$cordeFundoButtonPrimary;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid  variaveis.$cordeFundoButtonPrimary;
+
+    &:hover{
+        background-color: lighten(variaveis.$cordeFundoButtonPrimary, 3%);
+    }
+    
+    &--secundary{
+        background-color: variaveis.$cordeFundoButtonSecun;
+        border-color: variaveis.$cordeFundoButtonSecun;
+
+        &:hover{
+            background-color: lighten(variaveis.$cordeFundoButtonSecun, 3%);
+        }
+    }
+    &--dark{
+        background-color: rgba(variaveis.$corFundoDark, 0.8);
+        border-color: variaveis.$corTextoSecun;
+
+        &:hover{
+            background-color: lighten(variaveis.$corTextoSecun, 3%);
+        }
+
+        &:hover{
+            background-color: variaveis.$corTextoSecun;
+            color: variaveis.$corFundo;
+        }
+    }
 }
 
 .image-text-section {

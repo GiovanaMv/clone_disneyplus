@@ -3,6 +3,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('[data-tab-id]');
     const questions = document.querySelectorAll('[data-faq-question]');
 
+    const herosection = document.querySelector('.hero');
+    const alturaHero = herosection.clientHeight;
+
+    window.addEventListener('scroll', function(){
+        const posiAtual = window.scrollY;
+
+        if(posiAtual < alturaHero){
+            ocultaElementHeader();
+        } else {
+            exibeElementHeader();
+        }
+    });
+    function ocultaElementHeader(){
+        const header = document.querySelector('header');
+        header.classList.add('header--is-hidden');
+    }
+    function exibeElementHeader(){
+        const header = document.querySelector('header');
+        header.classList.remove('header--is-hidden');
+    }
+
+
     buttons.forEach(button => {
         button.addEventListener('click', function() {
             const targetTab = button.dataset.tabButton;
