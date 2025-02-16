@@ -9,11 +9,14 @@
         list-style: none;
         gap: 24px;
         margin-top: 44px;  
+
+        @media (max-width: 768px){
+            grid-template-columns: 1fr 1fr;
+        }
         
             &--is-active{
                 display: grid;
             }
-
 
         &__item{
             

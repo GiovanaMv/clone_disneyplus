@@ -1,48 +1,69 @@
 @use 'variaveis';
 
-.header{
+.header {
     position: sticky;
     top: 0;
     left: 0;
+    width: 100%;
     background-color: variaveis.$corFundo;
-    transition: background-color .5s ease;
-    z-index: 1;
+    transition: background-color 0.5s ease, height 0.3s ease;
+    z-index: 100; // Aumentado para garantir que fique acima de outros elementos
 
-    &--is-hidden{
+    &--is-hidden {
         background-color: transparent;
-        transition: background-color .5s ease;
+        height: 40px; // Em vez de esconder, reduz a altura
 
-        .header{
-            &__logo, &__links__item:first-child{
+        .header {
+            &__logo,
+            &__links__item:first-child {
                 opacity: 0;
                 visibility: hidden;
-                transition: opacity .9s ease;
-
+                transition: opacity 0.5s ease, visibility 0.3s ease;
             }
         }
     }
 
-    &__container{
+    &__container {
         padding: 8px 36px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            padding: 8px 16px; // Mais equilíbrio no mobile
+        }
     }
-    &__logo{
+
+    &__logo {
         max-width: 80px;
         width: 100%;
         margin: 5px;
-        transition: opacity .5s ease;
-    }
-    &__links{
-        display: flex;
+        transition: opacity 0.5s ease;
 
-        &__item{
-            margin: 5px;
-            transition: opacity .5s ease;
-
+        @media (max-width: 768px) {
+            max-width: 64px;
         }
     }
-    .button{
+
+    &__links {
+        display: flex;
+        gap: 10px; // Melhor espaçamento entre links
+
+        &__item {
+            margin: 5px;
+            transition: opacity 0.5s ease;
+        }
+    }
+
+    .button {
         height: 50px;
+        transition: all 0.3s ease; // Suaviza mudanças
+
+        @media (max-width: 768px) {
+            font-size: 13px;
+            padding: 8px 11px;
+            height: 40px;
+            letter-spacing: 0;
+        }
     }
 }

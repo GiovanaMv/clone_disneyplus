@@ -1,29 +1,53 @@
 @use 'variaveis';
 
 .plans {
-    padding: 3vw 0; /* Ajuste de espaçamento */
+    padding: 3vw 0;
 
     h2 {
         text-align: center;
-        margin-bottom: 20px; /* Dá um respiro abaixo do título */
+        margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+            margin: 0;
+            padding: 0;
+        }
     }
+
     &__list {
         display: flex;
-        justify-content: center; /* Centraliza os itens */
-        gap: 40px; /* Dá espaço entre os planos */
+        justify-content: center;
+        gap: 40px;
         list-style: none;
-    
+        flex-wrap: wrap; // Permite que os itens quebrem linha se necessário
+
+        @media (max-width: 768px) {
+            display: block;
+            margin-top: 50px;
+        }
+
         &__item {
-            margin: 30px;
             text-align: center;
             padding: 40px 20px;
-            width: 20%; /* Reduz a largura para caber três por linha */
-            max-width: 380px; /* Define um tamanho máximo para manter proporção */
-            
-            &:nth-child(2){
+            flex-basis: 30%; // Define o tamanho dos itens no desktop
+            max-width: 380px;
+            border-radius: 8px; // Bordas arredondadas para um design mais moderno
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra leve
+
+            @media (max-width: 768px) {
+                width: 100%;
+                padding:  20px;
+                margin-bottom: 20px; // Espaço entre os planos no mobile
+            }
+
+            &:nth-child(2) {
                 background-image: url(../images/fundo_combo_plus.png);
-                background-size: contain;
+                background-size: cover;
+                background-position: center;
                 background-repeat: no-repeat;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
             }
 
             strong {
@@ -31,16 +55,16 @@
                 font-size: 1.2em;
                 margin-top: 10px;
             }
+
             img {
                 display: block;
                 margin: 0 auto;
-                max-width: 100%; /* Para garantir que a imagem não ultrapasse os limites do item */
+                max-width: 100%;
             }
         }
     }
-
 }
+
 p {
     text-align: center;
 }
-
